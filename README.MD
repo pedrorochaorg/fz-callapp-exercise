@@ -5,7 +5,7 @@ This Software piece was an interview exercise
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisities
 
@@ -43,16 +43,22 @@ npm run typings install
 
 ## Running
 
-To Run the Application type the following CMS inside the project root folder:
+To Run the Application type the following CMD inside the project root folder:
+
+
+```
+npm start
+```
+
 
 ## Authors
 
-* **Pedro Rocha** -
+* **Pedro Rocha**
 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
