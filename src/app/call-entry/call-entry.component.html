@@ -1,0 +1,34 @@
+<div class="call">
+
+    <h1 [ngClass]="setClasses(callData)">{{callData.number}} | <span>{{callData.state}}</span><i class="fa fa-phone" aria-hidden="true"></i></h1>
+    <div class="call__content">
+        <div class="col col-6">
+            <h2>General Details</h2>
+            <p><span>Status Changed: </span><br />{{callData.timestamp | date: 'HH:mm:ss, Z' }}</p>
+            <p *ngIf="callData.durationMs"><span>Duration: </span>{{ ( callData.durationMs / 1000 ) / 60 | number:'1.2-2' }} min</p>
+        </div>
+        <div  class="col col-6">
+            <h2>Caller Details</h2>
+                <p *ngIf="contact"><span>Name: </span><br />{{contact.firstName + ' ' + contact.lastName}}</p>
+                <p *ngIf="contact"><span>Type: </span><br />Contact</p>
+                <p *ngIf="lead && !contact"><span>Name: </span><br />{{lead.firstName + ' ' + lead.lastName}}</p>
+                <p *ngIf="lead && !contact"><span>Type: </span><br />Lead</p>
+        </div>
+        <div *ngIf="_case" [ngClass]="setDetailClasses()">
+            <h2  (click)="toggleDetails()">Case Details &nbsp; <i>{{(isDetailOpen) ? '-' : '+'}}</i><span>{{(isDetailOpen) ? '-' : '+'}}</span></h2>
+            <label>Subject</label>
+            <input type="text" name="subject" [(ngModel)]="_case.status" (change)="saveCaseData(_case)"/>
+            <label>Description</label>
+            <textarea rows="3" cols="5" name="description" [(ngModel)]="_case.description" (change)="saveCaseData(_case)"></textarea>
+
+        </div>
+    </div>
+    <div class="call__controls">
+        <button *ngIf="callData.state==='RING'" class="reject" (click)="rejectCall()">REJECT</button>
+        <button *ngIf="callData.state==='RING'" class="answear" (click)="answearCall()">ANSWEAR</button>
+        <button *ngIf="(callData.state==='ACTIVE' || callData.state==='HOLD')" class="hang" (click)="hangCall()">HANGUP</button>
+        <button *ngIf="callData.state==='ACTIVE'" class="hold" (click)="holdCall()">HOLD</button>
+        <button *ngIf="callData.state==='HOLD'" class="back" (click)="backCall()">RETURN</button>
+
+    </div>
+</div>

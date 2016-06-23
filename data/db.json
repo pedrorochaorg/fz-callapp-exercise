@@ -1,0 +1,114 @@
+{
+  "calls": [
+    {
+      "id": 1,
+      "state": "END",
+      "number": "+351930000001",
+      "timestamp": 1465232869689,
+      "durationMs": 24014
+    },
+    {
+      "id": 2,
+      "state": "HOLD",
+      "number": "+351910000002",
+      "timestamp": 1465233077268
+    },
+    {
+      "id": 3,
+      "state": "ACTIVE",
+      "number": "+351910000003",
+      "timestamp": 1465233153697
+    },
+    {
+      "id": 4,
+      "number": 351910000001,
+      "state": "MISSED",
+      "timestamp": 1465233198284
+    }
+  ],
+  "leads": [
+    {
+      "id": 1,
+      "firstName": "Elon",
+      "lastName": "Musk",
+      "role": "CEO",
+      "company": "Tesla",
+      "phones": [
+        "+351910000003"
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Mikael",
+      "lastName": "Ohlsson",
+      "role": "CEO",
+      "company": "IKEA",
+      "phones": [
+        "910000004"
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "Mark",
+      "lastName": "Zuckerberg",
+      "role": "CEO",
+      "accountId": 1,
+      "phones": [
+        "+351910000001",
+        "930000001"
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Bill",
+      "lastName": "Gates",
+      "role": "CEO",
+      "accountId": 2,
+      "phones": [
+        "910000002"
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "name": "Facebook"
+    },
+    {
+      "id": 2,
+      "name": "Microsoft"
+    }
+  ],
+  "cases": [
+    {
+      "id": 1,
+      "callId": 1,
+      "contactId": 1,
+      "status": "Not interested",
+      "description": "Teams use Facebook to communicate. They are not interested on Fuze."
+    },
+    {
+      "id": 2,
+      "callId": 2,
+      "contactId": 2,
+      "status": "In progress",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "callId": 3,
+      "leadId": 1,
+      "status": "In progress",
+      "description": "Musk whants to buy Fuze company to enable meetings in their cars"
+    },
+    {
+      "id": 4,
+      "callId": 4,
+      "leadId": 1,
+      "status": "In progress",
+      "description": ""
+    }
+  ]
+}

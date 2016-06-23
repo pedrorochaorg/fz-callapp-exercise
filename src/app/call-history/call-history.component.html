@@ -1,0 +1,7 @@
+<div class="container">
+    <h1>{{error}}</h1>
+    <div class="content">
+        <call-entry *ngFor="let call of calls | orderby:['!id']" class="in-anim" [callData]="call" [_case]="getCaseByCallId(call.id)" [contact]="getContactByPhone(''+call.number)" [lead]="getLeadByPhone(''+call.number)" (update)="onUpdate($event)" (hangCalls)="hangCalls($event)"></call-entry>
+
+    </div>
+</div>

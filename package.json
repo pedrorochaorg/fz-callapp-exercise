@@ -1,0 +1,45 @@
+{
+  "name": "angular2ts",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run clean && npm run sass && npm run copy && npm run tsc && concurrently \"json-server --watch ./data/db.json\" \"npm run sass:w\" \"npm run htmlwatcher\" \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server --config=bs-config.json",
+    "postinstall": "typings install",
+    "htmlwatcher": "watch -p './src/**/*.{png,gif,otf,eot,svg,ttf,woff,woff2,jpg,webp,jpeg,html}' -c 'npm run copy'",
+    "tsc": "tsc",
+    "copy": "copyfiles -u 1 './src/**/*.html' ./dist/ && copyfiles -u 1 './src/**/*.{png,gif,otf,eot,svg,ttf,woff,woff2,jpg,webp,jpeg}' ./dist/ && copyfiles -u 2 './node_modules/font-awesome/fonts/*.{otf,eot,svg,ttf,woff,woff2}' ./dist/styles/",
+    "tsc:w": "tsc -w",
+    "sass": "node-sass ./src/ -o ./dist/",
+    "sass:w": "node-sass -w ./src/ -o ./dist/",
+    "clean": "rm -rf dist && mkdir dist",
+    "typings": "typings"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.2",
+    "@angular/compiler": "2.0.0-rc.2",
+    "@angular/core": "2.0.0-rc.2",
+    "@angular/http": "2.0.0-rc.2",
+    "@angular/platform-browser": "2.0.0-rc.2",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.2",
+    "@angular/router": "2.0.0-rc.2",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.2",
+    "copyfiles": "^1.0.0",
+    "core-js": "^2.4.0",
+    "font-awesome": "^4.6.3",
+    "json-server": "^0.8.14",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.27",
+    "watch-cli": "^0.2.1",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "node-sass": "^3.0.0",
+    "typings": "^1.0.4"
+  }
+}
